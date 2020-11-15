@@ -11,31 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538d5a3f-bf20-4071-b84c-6f5606540ac6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/atark-backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/book.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/category.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/city.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/country.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/point.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/tariff.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/transport.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/book.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/category.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/city.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/coutry.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/info.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/point.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/pointworker.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/tariff.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/transport.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/user.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +81,7 @@
       <workItem from="1605008886439" duration="18374000" />
       <workItem from="1605197860767" duration="755000" />
       <workItem from="1605285248278" duration="4457000" />
-      <workItem from="1605361271318" duration="5147000" />
+      <workItem from="1605361271318" duration="5515000" />
     </task>
     <servers />
   </component>
