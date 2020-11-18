@@ -11,7 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538d5a3f-bf20-4071-b84c-6f5606540ac6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/v1/chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/v1/cron.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/v1/info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/v1/statistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,19 +58,6 @@
       <recent name="C:\Users\Pasha\WebstormProjects\atark-backend\api\v1" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -81,7 +77,14 @@
       <workItem from="1605008886439" duration="18374000" />
       <workItem from="1605197860767" duration="755000" />
       <workItem from="1605285248278" duration="4457000" />
-      <workItem from="1605361271318" duration="6102000" />
+      <workItem from="1605361271318" duration="6946000" />
+      <workItem from="1605466078810" duration="1559000" />
+      <workItem from="1605527704357" duration="7407000" />
+      <workItem from="1605562174369" duration="3585000" />
+      <workItem from="1605616459917" duration="893000" />
+      <workItem from="1605620218670" duration="16940000" />
+      <workItem from="1605687597136" duration="15000" />
+      <workItem from="1605691388313" duration="14279000" />
     </task>
     <servers />
   </component>
@@ -116,6 +119,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1604684030384" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1605694077796">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1605694077796" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605113384660">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

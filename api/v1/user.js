@@ -4,6 +4,7 @@ const router = express.Router()
 const USER = require('../../models/user.model')
 const jwt = require("jsonwebtoken");
 const bCrypt = require('bcrypt')
+const saltRounds = 10;
 
 const authenticateToken = require('./helpers')
 
@@ -14,19 +15,28 @@ router
         const user_email = req.body.user_email;
         const user_password = req.body.user_password;
 
+
+
         const user = await USER.findOne({
-            user_email,
-            user_password
+            user_email
         })
+
+        //console.log(await bCrypt.compare(user_password, user.user_password))
 
         if (!user) {
             return res.sendStatus(404)
         } else {
 
-            const { user_email, _id } = user
-            const access_token = jwt.sign({ user_email, _id }, process.env.TOKEN_SECRET);
+            if (await bCrypt.compare(user_password, user.user_password) === false) {
+                return res.sendStatus(401)
+            }
+            else {
+                const { user_email, _id } = user
 
-            res.json({ user_email, _id, access_token })
+                const access_token = jwt.sign({ user_email, _id }, process.env.TOKEN_SECRET);
+
+                res.json({ user_email, _id, access_token })
+            }
 
         }
 
@@ -66,19 +76,20 @@ router
 
         //register
 
-        const newUser = new USER({
+        let newUser = new USER({
             user_name: req.body.user_name,
             user_middle_name: req.body.user_middle_name,
             user_last_name: req.body.user_last_name,
             user_phone: req.body.user_phone,
             user_email: req.body.user_email,
-            user_password:  req.body.user_password,
+            user_password:  await bCrypt.hash(req.body.user_password, 10),
             user_id_number: req.body.user_id_number,
             user_address: req.body.user_address,
             user_city_registered: req.body.user_city_registered,
         })
+
         await newUser.save()
-            .then(() => res.json({message: `user added`}))
+            .then((r) => res.json({message: `user added`, r}))
             .catch(err => res.json({ error: err }))
 
     })
