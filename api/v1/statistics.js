@@ -96,6 +96,8 @@ router
 
         const point_id = req.params.point_id
 
+        let bookings = []
+
         const transport = await TRANSPORT.find({
             point_id: point_id,
         })
@@ -104,35 +106,37 @@ router
         let time_total = 0;
         let rides_total = 0;
 
+
         if(transport && !transport.length) return res.json({ error: `no transport found` })
 
         for(const item of transport){
 
             //get total rides on point
 
-            const bookings = await BOOK.find({
+            await BOOK.find({
                 transport_id: item._id,
-            });
+            })
+                .then(books => {
+                    bookings.push(books)
+                    rides_total += books.length
+                })
 
-            rides_total += bookings.length
+        }
+        //get money spend on one point
 
-            //get money spend on one point
+        if(bookings && bookings.length){
 
-            if(bookings && bookings.length){
+            for(const b of bookings[0]){
 
-                for(const b of bookings){
+                const tariff_id = b.tariff_id;
+                const tariff = await TARIFF.findById(tariff_id);
 
-                    const tariff_id = b.tariff_id;
-                    const tariff = await TARIFF.findById(tariff_id);
+                const time_start = await moment(b.book_start);
+                const time_end = await moment(b.book_end);
 
-                    const time_start = await moment(b.book_start);
-                    const time_end = await moment(b.book_end);
+                money_total += Number(tariff.tariff_price.split(' ')[0]);
 
-                    money_total += Number(tariff.tariff_price.split(' ')[0]);
-
-                    time_total += await (time_end.diff(time_start, "minutes"));
-
-                }
+                time_total += await (time_end.diff(time_start, "minutes"));
 
             }
 

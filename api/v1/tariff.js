@@ -18,7 +18,7 @@ router
 
         const tariffs = await TARIFF.findById(tariff_id)
 
-        res.json( tariffs ? { tariffs } : { message: `no tariffs` } )
+        res.json( tariffs ? tariffs  : { message: `no tariffs` } )
 
     })
     //get tariff by category id

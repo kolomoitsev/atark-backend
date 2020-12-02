@@ -41,7 +41,7 @@ const User = new Schema({
         required: true,
     },
     user_city_registered: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId, ref : 'City',
         required: true,
     },
     user_rating: {
@@ -51,6 +51,10 @@ const User = new Schema({
     user_status: {
         type: String,
         default: `active`,
+    },
+    user_role: {
+        type: String,
+        required: true,
     },
 
 },{

@@ -40,6 +40,8 @@ const TARIFF_API = require('./api/v1/tariff')
 const INFO_API = require('./api/v1/info')
 const STATISTICS_API = require('./api/v1/statistics')
 
+const TEST_API = require('./api/v1/test')
+
 app.use('/api/v1/book', BOOK_API)
 app.use('/api/v1/user', USER_API)
 app.use('/api/v1/transport', TRANSPORT_API)
@@ -50,6 +52,8 @@ app.use('/api/v1/point', POINT_API)
 app.use('/api/v1/tariff', TARIFF_API)
 app.use('/api/v1/info', INFO_API)
 app.use('/api/v1/statistic', STATISTICS_API)
+
+app.use('/api/v1/test', TEST_API)
 
 require('./api/v1/cron') // CRON FOR BACKEND
 

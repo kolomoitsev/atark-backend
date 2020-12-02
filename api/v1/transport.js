@@ -4,6 +4,7 @@ const router = express.Router()
 const authenticateToken = require('./helpers')
 
 const TRANSPORT = require('../../models/transport.model')
+const POINT = require('../../models/point.model')
 
 router
 
@@ -18,9 +19,17 @@ router
 
         const category_id = req.body.category_id
         const point_id = req.body.point_id
+        const user_id = req.body.user_id
         const transport_name = req.body.transport_name
         const transport_serial_number = req.body.transport_serial_number
         const transport_insurance_number = req.body.transport_insurance_number
+
+        const point  = await POINT.find({
+            _id: point_id,
+            user_id: user_id
+        })
+
+        if(!point.length) return res.json({ error : `you must be the owner to add transport` })
 
         const transport = new TRANSPORT({
             category_id : category_id,
@@ -46,6 +55,16 @@ router
         const transport_serial_number = req.body.transport_serial_number
         const transport_insurance_number = req.body.transport_insurance_number
 
+
+        const user_id = req.body.user_id
+
+        const point  = await POINT.find({
+            _id: point_id,
+            user_id: user_id
+        })
+
+        if(!point.length) return res.json({ error : `you must be the owner to edit transport` })
+
         // check if transport locked
 
         const transport = await TRANSPORT.findById(transport_id)
@@ -68,6 +87,15 @@ router
     .delete('/', authenticateToken, async (req, res) => {
 
         const transport_id = req.body.transport_id
+        const point_id = req.body.point_id
+        const user_id = req.body.user_id
+
+        const point  = await POINT.find({
+            _id: point_id,
+            user_id: user_id
+        })
+
+        if(!point.length) return res.json({ error : `you must be the owner to delete transport` })
 
         // check if transport locked
 

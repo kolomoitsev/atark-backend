@@ -13,7 +13,7 @@ const Point = new Schema({
         type: String,
         required: true,
     },
-    owner_id: {
+    user_id: {
         type: mongoose.Schema.Types.ObjectId, ref: 'User',
         required: true,
         unique: true,

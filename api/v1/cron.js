@@ -21,6 +21,7 @@ const task = cron.schedule("* * * * * *", async () => {
 
             const end_tariff = await moment(b.book_end)
 
+            //console.log(date, end_tariff)
 
             if(moment(date).isAfter(end_tariff)){
 

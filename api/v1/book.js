@@ -31,6 +31,14 @@ router
 
         //const book_end = req.body.book_end
 
+        //console.log(moment(new Date(Date.now())))
+
+        const now = await moment(new Date(Date.now()))
+
+        console.log(now, book_start)
+
+        if(moment(now).isAfter(book_start)) return res.json({ error : `you can't make booking in past` })
+
         //find transport by id
 
         const transport = await TRANSPORT.findById(transport_id)
@@ -40,6 +48,8 @@ router
         const tariff = await TARIFF.findById(tariff_id)
 
         const user = await USER.findById(user_id)
+
+        if(user && user.user_role !== 'client') return res.json({ error: `you must be a client` })
 
         if(!transport) return res.json({ error : `transport not found` })
 
@@ -62,6 +72,10 @@ router
         //add tariff approx end
 
         const tariff_approx_end = moment(new Date(book_start)).add(tariff_length, 'minutes')
+
+        //check for past time
+
+
 
         //optimize schedule check
 
@@ -147,6 +161,34 @@ router
         })
             .then(() => res.json({ message : `updated` }))
             .catch(e => res.json({ error: e }))
+    })
+    //get history by point id
+    .get('/history/:point_id', authenticateToken, async(req, res) => {
+
+        const point_id = req.params.point_id
+
+        const transports = await TRANSPORT.find({
+            point_id: point_id,
+        })
+
+        if(!transports) return res.json({ error: `no transport` })
+
+        const books = await BOOK.find({})
+
+        if(!books) return res.json({ error: `no books` })
+
+        let result = []
+
+        for(transport of transports){
+            for(book of books){
+                if(`${transport._id}` === `${book.transport_id}`){
+                    result.push(book)
+                }
+            }
+        }
+
+        res.json({ result })
+
     })
 
 module.exports = router

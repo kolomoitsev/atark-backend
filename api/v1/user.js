@@ -4,7 +4,6 @@ const router = express.Router()
 const USER = require('../../models/user.model')
 const jwt = require("jsonwebtoken");
 const bCrypt = require('bcrypt')
-const saltRounds = 10;
 
 const authenticateToken = require('./helpers')
 
@@ -14,8 +13,6 @@ router
 
         const user_email = req.body.user_email;
         const user_password = req.body.user_password;
-
-
 
         const user = await USER.findOne({
             user_email
@@ -56,11 +53,11 @@ router
 
     })
     //finding user by user_id
-    .get('/find', authenticateToken, async (req, res) => {
+    .get('/find/:user_id', authenticateToken, async (req, res) => {
 
-        const user = await USER.findOne({
-            _id: req.body.user_id
-        })
+        const _id = req.params.user_id
+
+        const user = await USER.findById(_id)
 
         if(!user) {
             return res.json({
@@ -68,11 +65,11 @@ router
             })
         }
 
-        return res.json({ user })
+        return res.json(user)
 
     })
     //adding new user
-    .post('/', authenticateToken, async (req, res) => {
+    .post('/', async (req, res) => {
 
         //register
 
@@ -86,10 +83,11 @@ router
             user_id_number: req.body.user_id_number,
             user_address: req.body.user_address,
             user_city_registered: req.body.user_city_registered,
+            user_role: req.body.user_role,
         })
 
         await newUser.save()
-            .then((r) => res.json({message: `user added`, r}))
+            .then((r) => res.json({ message: `user added`, r }))
             .catch(err => res.json({ error: err }))
 
     })

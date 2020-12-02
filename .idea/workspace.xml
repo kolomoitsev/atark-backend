@@ -11,15 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538d5a3f-bf20-4071-b84c-6f5606540ac6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/v1/chat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/cron.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/info.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/v1/statistics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/v1/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bench.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/cron.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/cron.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/point.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/point.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/statistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/tariff.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/tariff.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/transport.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/transport.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/v1/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/point.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/point.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,6 +88,14 @@
       <workItem from="1605620218670" duration="16940000" />
       <workItem from="1605687597136" duration="15000" />
       <workItem from="1605691388313" duration="14279000" />
+      <workItem from="1605731044363" duration="314000" />
+      <workItem from="1605782255722" duration="13542000" />
+      <workItem from="1606129927772" duration="1586000" />
+      <workItem from="1606307323938" duration="9017000" />
+      <workItem from="1606414602005" duration="8241000" />
+      <workItem from="1606684035623" duration="4682000" />
+      <workItem from="1606766958681" duration="2266000" />
+      <workItem from="1606906695785" duration="2352000" />
     </task>
     <servers />
   </component>
